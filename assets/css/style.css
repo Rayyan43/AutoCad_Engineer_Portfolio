@@ -1,0 +1,271 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #8a2be2;
+  --secondary: #9370db;
+  --dark-purple: #1a1a3a;
+  --light-purple: #4a3f6f;
+  --light: #f8f9fa;
+  --dark: #111;
+  --transition: 0.3s ease-in-out;
+  --section-bg-color: var(--dark-purple);
+  --section-text-color: #ffffff;
+  --pattern-opacity: 0.1;
+  --gradient-start: #8a2be2;
+  --gradient-mid: #6a5acd;
+  --gradient-end: #9370db;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* ===== SECTION BACKGROUND ===== */
+.section-bg, .bg-custom {
+  background-color: var(--section-bg-color);
+  color: var(--section-text-color);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1rem;
+}
+
+.section-bg::before, .bg-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(26, 26, 58, 0.9), rgba(26, 26, 58, 0.9)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%239370db" stroke-width="1" stroke-opacity="0.2"/><circle cx="50" cy="50" r="40" stroke="%238a2be2" stroke-width="1" fill="none" stroke-opacity="0.1"/></svg>');
+  background-size: cover;
+  opacity: var(--pattern-opacity);
+  z-index: 0;
+}
+
+.section-bg > *, .bg-custom > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: rgba(26, 26, 58, 0.95) !important;
+  transition: var(--transition);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand, .nav-link {
+  color: var(--light) !important;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
+
+.nav-link.active {
+  color: var(--secondary) !important;
+  font-weight: 600;
+}
+
+/* ===== HEADINGS ===== */
+.section-bg h1,
+.section-bg h2,
+.bg-custom h2 {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-bg h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-bg h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Text color for other sections */
+.text-white {
+  color: var(--light) !important;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--gradient-end), var(--gradient-start));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+}
+
+.btn-outline-light {
+  color: var(--light);
+  border-color: var(--light);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--light);
+  color: var(--dark-purple);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+/* ===== CARD HOVER EFFECT ===== */
+.card {
+  transition: var(--transition);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(138, 43, 226, 0.2);
+}
+
+.card-img-top {
+  transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* ===== CONTACT FORM ===== */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--light-purple);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.25);
+  border-color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== RESPONSIVE EMBED RATIO ===== */
+.ratio iframe {
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-links a {
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.rounded-circle {
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)) border-box;
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+  transition: var(--transition);
+}
+
+.rounded-circle:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(138, 43, 226, 0.4);
+}
+
+/* ===== LIST ITEMS ===== */
+.list-unstyled li {
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.list-unstyled li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.list-unstyled li:hover {
+  transform: translateX(5px);
+  color: var(--secondary);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .section-bg h1, .bg-custom h1 {
+    font-size: 2.5rem;
+  }
+  .section-bg h2, .bg-custom h2 {
+    font-size: 1.8rem;
+  }
+  .section-bg, .bg-custom {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-bg h1, .bg-custom h1 {
+    font-size: 2rem;
+  }
+  .section-bg h2, .bg-custom h2 {
+    font-size: 1.5rem;
+  }
+  .section-bg, .bg-custom {
+    padding: 2rem 1rem;
+  }
+  
+  .btn-primary, .btn-outline-light {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

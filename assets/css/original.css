@@ -1,0 +1,87 @@
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #0d6efd;
+  --dark: #111;
+  --light: #f8f9fa;
+  --transition: 0.3s ease-in-out;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: rgba(0,0,0,0.9);
+  transition: var(--transition);
+}
+.navbar-brand {
+  font-weight: 700;
+}
+.nav-link {
+  transition: var(--transition);
+}
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* ===== HERO SECTION ===== */
+
+#hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/contain no-repeat;
+  color: white;
+} 
+
+/* #hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') no-repeat;
+  background-size: 100% 90%; /* Replace with your desired dimensions *//*
+  color: white;
+} */
+
+/* #hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/cover no-repeat;
+  background-position: center; /* Adjust this value (e.g., top, bottom, left, right) *//*
+  color: white;
+
+} */
+
+
+/* #hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+} */
+#hero h1 {
+  animation: fadeInDown 1s forwards;
+}
+@keyframes fadeInDown {
+  from {opacity:0; transform:translateY(-30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* ===== CARD HOVER EFFECTS ===== */
+.card {
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== CONTACT FORM ===== */
+form .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+/* ===== RESPONSIVE EMBED RATIO ===== */
+.ratio iframe {
+  border-radius: 0.5rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 576px) {
+  #hero h1 {font-size:2.2rem;}
+}
